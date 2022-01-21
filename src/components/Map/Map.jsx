@@ -9,8 +9,6 @@ import useStyles from "./styles";
 const Map = ({ setCoordinates, setBounds, coordinates }) => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(min-width:600px)");
-  // const coordinates = { lat: 0, lng: 0 };
-  // const { setCoordinates, setBounds, coordinates} = props;
 
   return (
     <div className={classes.mapContainer}>

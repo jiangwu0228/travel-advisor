@@ -12,10 +12,11 @@ import PlaceDetail from "../PlaceDetails/PlaceDetail.jsx";
 
 import useStyles from "./styles.js";
 
-const List = () => {
+const List = ({places}) => {
   const classes = useStyles();
   const [type, setType] = useState("restaurant");
   const [rating, setRating] = useState("0");
+  console.log(places);
 
   const types = {
     Restaurant: "restaurant",
@@ -30,17 +31,17 @@ const List = () => {
     4.5: "Above 4.5",
   };
 
-  const places = [
-    { name: "Cool Place" },
-    { name: "Best Beer" },
-    { name: "Best Steak" },
-    { name: "Cool Place" },
-    { name: "Best Beer" },
-    { name: "Best Steak" },
-    { name: "Cool Place" },
-    { name: "Best Beer" },
-    { name: "Best Steak" },
-  ];
+  // const places = [
+  //   { name: "Cool Place" },
+  //   { name: "Best Beer" },
+  //   { name: "Best Steak" },
+  //   { name: "Cool Place" },
+  //   { name: "Best Beer" },
+  //   { name: "Best Steak" },
+  //   { name: "Cool Place" },
+  //   { name: "Best Beer" },
+  //   { name: "Best Steak" },
+  // ];
 
   const typeOpt = Object.keys(types).map((key) => {
     return <MenuItem value={types[key]}>{key}</MenuItem>;
