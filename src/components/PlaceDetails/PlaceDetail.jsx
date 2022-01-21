@@ -16,8 +16,6 @@ import useStyles from "./styles.js";
 
 const PlaceDetail = ({ place, selected, refProp }) => {
   const classes = useStyles();
-  console.log(selected);
-  console.log(refProp);
   if (selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });  return (
     <Card>
       <CardMedia
