@@ -14,10 +14,11 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import Rating from "@material-ui/lab/Rating";
 import useStyles from "./styles.js";
 
-const PlaceDetail = ({ place }) => {
-  console.log(place);
+const PlaceDetail = ({ place, selected, refProp }) => {
   const classes = useStyles();
-  return (
+  console.log(selected);
+  console.log(refProp);
+  if (selected) refProp?.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });  return (
     <Card>
       <CardMedia
         style={{ height: 350 }}
@@ -88,10 +89,18 @@ const PlaceDetail = ({ place }) => {
         )}
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary" onClick={() => window.open(place.web_url, '_blank')}>
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => window.open(place.web_url, "_blank")}
+        >
           Trip Advisor
         </Button>
-        <Button size="small" color="primary" onClick={() => window.open(place.website, '_blank')}>
+        <Button
+          size="small"
+          color="primary"
+          onClick={() => window.open(place.website, "_blank")}
+        >
           Website
         </Button>
       </CardActions>
