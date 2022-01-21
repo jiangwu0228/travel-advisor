@@ -12,22 +12,29 @@ import PlaceDetail from "../PlaceDetails/PlaceDetail.jsx";
 
 import useStyles from "./styles.js";
 
-const List = ({ places, childClicked, isLoading }) => {
+const List = ({
+  places,
+  childClicked,
+  isLoading,
+  type,
+  setType,
+  rating,
+  setRating,
+}) => {
   const classes = useStyles();
-  const [type, setType] = useState("restaurant");
-  const [rating, setRating] = useState("0");
+
   const [elRefs, setElRefs] = useState([]);
 
   useEffect(() => {
     setElRefs((refs) =>
-      Array(places.length)
+      Array(places?.length)
         .fill()
         .map((_, i) => refs[i] || createRef())
     );
   }, [places]);
 
   const types = {
-    Restaurant: "restaurant",
+    Restaurants: "restaurants",
     Hotels: "hotels",
     Attractions: "attractions",
   };
